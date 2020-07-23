@@ -1,4 +1,4 @@
-name: try relase
+name: try release
 
 on:
   push:
@@ -6,15 +6,13 @@ on:
       - 'v*'
 
 jobs:
-  relase:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: zip
         shell: bash
         run: |
-          apt update
-          apt install zip unzip
           zip bar.zip foo.txt
 
       - name: Create release
